@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <div id="card">
+        <header>
+            <h1>TO DO APP</h1>
+            <!--Add new task button-->
+            <button id="add-task-btn">Agregar nueva tarea</button>
+        </header>
+
+        <!--New task configuration modal-->
+        <div id="modal">
+            <form id="task-form">
+                <input type="text" id="task-name-input" placeholder="Nombre de la tarea" required>
+                <textarea id="task-description-input" placeholder="Descripción de tu tarea"></textarea>
+                <input type="date" id="task-date-input">
+                
+                <div class="modal-buttons">
+                    <button id="cancel-btn" type="button" onclick="cancelTask()">Cancelar</button>
+                    <button id="confirm-btn" type="submit" onclick="addTask()">Confirmar</button>
+                </div>
+            </form>
+        </div>
+        
+        <!--Tasks list-->
+        <div id="tasks">
+            <div class="task">
+                <div class="data">
+                    <p class="task-name">Task name</p>
+                    <p class="max-date">00/00/0000</p>
+                    <p class="task-description">Detailed description of your task</p>
+                </div>
+                <img src="images/delete_icon.png" class="delete-task">
+            </div>
+        </div>
+    </div>
+    <script src="script.js" async></script>
+</body>
+</html>

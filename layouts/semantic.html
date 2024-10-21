@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic layout</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            height: 100vh;
+        }
+
+        header{
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+        }
+
+        h1{
+            margin: 0 16px;
+        }
+
+        nav{
+            flex-grow: 1;
+            border: 1px solid black;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            background-color: red;
+        }
+
+        main{
+            border: 3px solid black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        section{
+            background-color: yellow;
+            border: 1px solid black;
+            grid-column: span 3;
+        }
+
+        #img-simulation{
+            width: 175px;
+            height: 200px;
+            background-color: lightgray;
+        }
+
+        article{
+            background-color: lightcoral;
+            grid-column: span 2;
+        }
+
+        aside{
+            background-color: lightpink;
+        }
+
+        footer{
+            background-color: lightsalmon;
+            height: 24vh;
+        }
+
+        @media (max-width: 732px) {
+            header{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav{width: 100%;}
+            
+            ul{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            article{grid-column: span 3;}
+
+            aside{grid-column: span 3;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Página Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre">Sobre Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam alias delectus laboriosam sit, quos dolores dolor in commodi quas. Eveniet hic nesciunt dolore optio architecto dolorum beatae autem provident veniam illo ut sed, et aperiam in voluptas doloremque quibusdam illum tempora aut quaerat ea similique dolorem! Facere recusandae consectetur molestiae perspiciatis. Quae officiis nesciunt alias iusto labore fugit, sit ducimus totam, sed eveniet, minus nam ipsam architecto. Tempora explicabo molestiae veritatis perspiciatis repudiandae modi repellat, sint asperiores ut. Pariatur, consequatur amet. Enim saepe ut assumenda odit magnam quo excepturi non, ea nihil autem eum, quam, ex neque sed quibusdam aspernatur amet explicabo! Vitae dolorum harum, quasi ut voluptas dolore quod quisquam natus molestiae! Vel, cumque. Fugit consectetur cupiditate iusto fugiat nulla maiores eligendi quasi nostrum cumque, quo architecto!</p>
+        </section>
+        <section id="sobre">
+            <h2>Sobre Nosotros</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio similique cupiditate quis enim dolor, eligendi ipsa alias culpa numquam earum consectetur qui nulla commodi vel repellendus aliquam perspiciatis consequatur, quibusdam molestiae quo hic porro aut? Aliquam quibusdam similique tempore temporibus recusandae inventore vitae quod, natus esse nemo, tempora praesentium sit quidem porro? Magni suscipit, explicabo sed cupiditate aut officiis. Vel ducimus quibusdam alias reiciendis cumque consequuntur quo velit id eveniet quia. Quibusdam, culpa et! Tempore quasi, ipsum est iure sit reiciendis nisi tenetur magnam tempora consequuntur natus, nemo dolores magni vitae vel minus voluptates a aspernatur consequatur perspiciatis fugiat laboriosam!</p>
+            <div id="img-simulation"></div>
+        </section>
+        <article>
+            <h2>Artículo Destacado</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit alias quasi voluptates culpa! Nesciunt tenetur eaque aliquid illo hic officia eveniet voluptates fuga, praesentium ex optio earum doloremque et veritatis nihil voluptas minus cupiditate error eos facilis, illum ad similique? Aliquam est pariatur aperiam excepturi, esse minus natus cum animi.</p>
+        </article>
+        <aside>
+            <h3>Publicidad</h3>
+            <p>Compra nuestros productos y obtén un 20% de descuento.</p>
+        </aside>
+    </main>
+    <footer>
+        <p>copyright</p>
+        <span style="font-size: 24px; font-weight: 700;"></span>
+    </footer>
+    <script>
+        const span = document.querySelector('span');
+        span.textContent = window.innerWidth + 'px';
+        window.addEventListener('resize', function(){
+            span.textContent = window.innerWidth + 'px';
+        });
+    </script>
+</body>
+</html>
